@@ -1,0 +1,68 @@
+{
+  "root": true,
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es2021": true
+  },
+  "ignorePatterns": [
+    "projects/**/*"
+  ],
+  "plugins": [
+    "prettier"
+  ],
+  "extends": [
+    "prettier"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "rules": {
+    "arrow-body-style": "off",
+    "prefer-arrow-callback": "off",
+    "prettier/prettier": [
+      "error",
+      {
+        "printWidth": 120
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": [
+        "*.ts"
+      ],
+      "parserOptions": {
+        "project": [
+          "tsconfig.json"
+        ],
+        "createDefaultProgram": true
+      },
+      "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@angular-eslint/recommended",
+        "plugin:prettier/recommended"
+      ],
+      "plugins": [
+        "@typescript-eslint",
+        "@angular-eslint"
+      ],
+      "rules": {
+        "@typescript-eslint/no-unused-vars": "off",
+        "max-len": [
+          "error",
+          {
+            "code": 300
+          }
+        ]
+      }
+    },
+    {
+      "files": [
+        "*.html"
+      ],
+      "extends": [
+        "plugin:@angular-eslint/template/recommended"
+      ]
+    }
+  ]
+}
